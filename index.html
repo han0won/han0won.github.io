@@ -4,35 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0ONE|웹 포트폴리오</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/fullpage.min.css">
     <link rel="stylesheet" href="./assets/css/comm.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/fullpage.min.js"></script>
 </head>
 
 <body>
-    <header></header>
-    <div class="fullpage">
-        <section class="sec-intro">
-            <div class="line">
-                <div class="textbox">H</div>
-                <div class="textbox">e</div>
-                <div class="textbox">l</div>
-                <div class="textbox">l</div>
-                <div class="textbox">o</div>
+    <div class="wrap">
+        <header id="header">
+            <nav class="gnb">
+                <div class="menu">INTRO</div>
+                <div class="menu">ABOUT ME</div>
+                <div class="main-btn">0one</div>
+                <div class="menu">PORTFOLIO</div>
+                <div class="menu">MORE INFO</div>
+            </nav>
+        </header>
+        <div id="full-page">
+            <div class="section intro">
+                <div class="line">
+                    <div class="textbox">H</div>
+                    <div class="textbox">e</div>
+                    <div class="textbox">l</div>
+                    <div class="textbox">l</div>
+                    <div class="textbox">o</div>
+                    <div class="textbox emoji">😉</div>
+                </div>
+                <div class="line">
+                    <div class="textbox">I</div>
+                    <div class="textbox">'</div>
+                    <div class="textbox">m</div>
+                    <div class="textbox br name">0
+                        <img src="./images/emoji _sparkles.png" alt="스파클">
+                    </div>
+                    <div class="textbox name">o</div>
+                    <div class="textbox name">n</div>
+                    <div class="textbox name">e</div>
+                    <div class="textbox mark">!</div>
+                </div>
+                <p>Web Publisher Portfolio</p>
+                <span>Scroll Down</span>
             </div>
-            <div class="line">
-                <div class="textbox">I</div>
-                <div class="textbox">'</div>
-                <div class="textbox">m</div>
-                <div class="textbox br name">0</div>
-                <div class="textbox name">o</div>
-                <div class="textbox name">n</div>
-                <div class="textbox name">e</div>
-                <div class="textbox name">!</div>
+            <div class="section about-me">
+                <h2>1</h2>
             </div>
-        </section>
+            <div class="section portfolio-1">
+                <h2>1</h2>
+            </div>
+            <div class="section portfolio-2">
+                <h2>1</h2>
+            </section>
+            <div class="section more-info">
+                <h2>1</h2>
+            </div>
+        </div>
+        <footer></footer>
     </div>
-    <footer></footer>
+    <script>
+        new fullpage('#full-page',{});
+    </script>
 </body>
 </html>

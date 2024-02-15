@@ -1,27 +1,92 @@
-@font-face {
-    font-family: "Nunito";
-    src: url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,900&display=swap');
-    font-weight: 900;
-    font-style: italic;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
+$primary: #BDD5D8;
+$point: #65B6BE;
+$text-default: #282828;
+$text-2: #606163;
+$bg: #FCFAF7;
 
 body {
-    background: #FFFEF2;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 300; 
+    background: $bg;
+    color: $text-default;
 }
 
-.sec-intro {
+.wrap {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    .gnb {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: 'Nunito';
+    }
+    .menu {
+        font-size: 18px;
+        font-weight: 900;
+        color: $text-2;
+    }
+    .main-btn {
+        font-size: 40px;
+        font-weight: 1000;
+        font-style: italic;
+        color: $primary;
+    }
+}
+
+.intro {
+    text-align: center;
     .line {
         display: flex;
         justify-content: center;
         font-family: 'nunito';
         font-size: 200px;
-        color: #363636;
+        font-weight: 1000;
+        line-height: 1.2;
     }
-    .br {
-        margin-left: 50px;
+    .emoji {
+        margin-top: 55px;
+        margin-left: -5px;
+        font-size: 120px
     }
     .name {
-        color: #4774E7;
+        font-style: italic;
+        color: $point;
+    }
+    .br {
+        position: relative;
+        margin-left: 50px;
+        // color: $primary;
+        img {
+            width: 60%;
+            position: absolute;
+            top: 10px;
+            left: -25px;
+        }
+    }
+    .mark {
+        padding-left: 15px;
+    }
+    p {
+        font-size: 24px;
+        font-weight: 100;
+        letter-spacing: 10px;
+        color: $text-2;
+    }
+    span {
+        font-family: 'Nunito';
+        font-size: 20px;
+        font-weight: 1000;
+        color: $primary;
     }
 }
