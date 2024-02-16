@@ -3,7 +3,7 @@
 
 $primary: #BDD5D8;
 $point: #65B6BE;
-$text-default: #282828;
+$text-default: #1d1d1d;
 $text-2: #606163;
 $bg: #FCFAF7;
 
@@ -14,12 +14,22 @@ body {
     color: $text-default;
 }
 
-// .wrap {
-// }
+ul {
+    padding-left: 0;
+    list-style: none;
+}
 
-#header {
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inner-wrap {
     margin: 0 auto;
     max-width: 1440px;
+}
+
+#header {
     position: fixed;
     top: 0;
     left: 0;
@@ -33,15 +43,17 @@ body {
         font-family: 'Nunito';
     }
     .menu {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 900;
         color: $text-2;
     }
     .main-btn {
-        font-size: 40px;
+        font-size: 36px;
         font-weight: 1000;
         font-style: italic;
-        color: $primary;
+        span {
+            color: $point;
+        }
     }
 }
 
@@ -56,18 +68,18 @@ body {
         line-height: 1.2;
     }
     .emoji {
-        margin-top: 55px;
+        margin-top: 60px;
         margin-left: -5px;
-        font-size: 120px
+        font-size: 110px
     }
     .name {
         font-style: italic;
-        color: $point;
+        // color: $point;
     }
     .br {
         position: relative;
         margin-left: 50px;
-        // color: $primary;
+        color: $point;
         img {
             width: 60%;
             position: absolute;
@@ -104,7 +116,97 @@ body {
     }
 }
 
+.pf-wrap {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    .pagebox {
+        width: 50%;
+        background: #ececec;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .justvet {
+        background-image: url(../../images/page-justvet.png);
+    }
+    .cheongdomall {
+        background-image: url(../../images/page-cheongdomall.png);
+    }
+    .explanation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        .ex-wrap {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        .ex-title {
+            .title-img {
+                height: 40px;
+            }
+            .title-justvet {
+                background-image: url(../../images/logo-justvet.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            p {
+                font-size: 18px;
+                font-weight: 200;
+            }
+        }
+        .ex-tool {
+            display: flex;
+            .t-left {
+                font-weight: 600; 
+            }
+            .t-right {
+                padding-left: 100px;
+            }
+            ul {
+                li {
+                    padding: 8px 0;
+                }
+            }
+        }
+        .ex-text {
+            line-height: 1.8;
+            text-align: justify;
+        }
+        .ex-btn {
+            ul {
+                display: flex;
+                gap: 20px;
+            }
+            li {
+                padding: 0;
+                width: 100px;
+                height: 40px;
+                border: 1px solid $point;
+                border-radius: 5px;
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 14px;
+                    font-weight: 500;
+                    &:hover {
+                        background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255,255,255,0) 80%);
+                    }
+                }
+            }
+        }
+    }
+}
+
 .more-info {
+    position: relative;
+    display: flex;
+    align-items: center;
     text-align: center;
     font-size: 24px;
     line-height: 2;
@@ -115,14 +217,50 @@ body {
         display: block;
         font-weight: 700;
     }
+    .more-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+        background-image: url(../../images/bg-more.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #footer {
+        position: absolute;
+        bottom: 0;
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: $text-2;
+        }
+    }
 }
 
-#footer {
-    position: relative;
-    bottom: 0;
-    p {
-        text-align: center;
-        font-size: 14px;
-        color: $text-2;
+
+#fp-nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000; 
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            a {
+                width: 4px;
+                height: 4px;
+                background-color: $text-2;
+                border-radius: 50%;
+                text-decoration: none;
+            }
+        }
+        li.active > a {
+            background-color: $point; 
+        }
     }
 }
