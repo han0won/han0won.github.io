@@ -7,6 +7,16 @@ $text-default: #1d1d1d;
 $text-2: #606163;
 $bg: #FCFAF7;
 
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+  
+a:hover, a:focus {
+    outline: none;
+}
+
 body {
     font-family: 'Pretendard', sans-serif;
     font-weight: 300; 
@@ -25,6 +35,7 @@ body {
 
 .inner-wrap {
     margin: 0 auto;
+    padding: 0 80px;
     max-width: 1440px;
 }
 
@@ -40,6 +51,12 @@ body {
         justify-content: space-around;
         align-items: center;
         font-family: 'Nunito';
+        a {
+            padding: 15px 25px;
+            position: relative;
+            display: block;
+            z-index: 1;
+        }
     }
     .menu {
         font-size: 16px;
@@ -59,19 +76,42 @@ body {
 .intro {
     text-align: center;
     .line {
+        position: relative;
         display: flex;
         justify-content: center;
         font-family: 'nunito';
         font-size: 200px;
         font-weight: 1000;
         line-height: 1.2;
+        overflow: hidden;
     }
-    .emoji {
-        margin-top: 60px;
-        margin-left: -5px;
+    .textbox {
+        position: relative;
+        &:hover {
+            animation: moveUp 0.3s ease forwards;        
+        }
+        @keyframes moveUp {
+            100% {
+                transform: translateY(-20px); /* Y축 방향으로 -20px만큼 이동합니다 */
+            }
+        }
+        p {
+            margin: 0;
+            font-size: 200px;
+        }
+    }
+    .blind {
+        opacity: 0;
+    }
+    .emoji-slick {
+        position: absolute;
+        bottom: 45px;
+        left: -10px;
+    }
+    .emoji-slide {
         font-size: 110px;
     }
-    .emoji2 {
+    .emoji {
         position: relative;
         img {
             position: absolute;
@@ -112,6 +152,7 @@ body {
         color: $text-2;
     }
     span {
+        position: absolute;
         font-family: 'Nunito';
         font-size: 20px;
         font-weight: 1000;
@@ -211,6 +252,9 @@ body {
                     font-weight: 500;
                     &:hover {
                         background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255,255,255,0) 80%);
+                    }
+                    span {
+                        z-index: 20;
                     }
                 }
             }
