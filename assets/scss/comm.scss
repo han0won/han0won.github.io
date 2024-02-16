@@ -12,16 +12,15 @@ body {
     font-weight: 300; 
     background: $bg;
     color: $text-default;
-}
-
-ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 .inner-wrap {
@@ -70,21 +69,37 @@ a {
     .emoji {
         margin-top: 60px;
         margin-left: -5px;
-        font-size: 110px
+        font-size: 110px;
+    }
+    .emoji2 {
+        position: relative;
+        img {
+            position: absolute;
+            width: 40%;
+            top: 10px;
+            right: -90px;
+        }
     }
     .name {
         font-style: italic;
         // color: $point;
     }
     .br {
-        position: relative;
         margin-left: 50px;
         color: $point;
-        img {
-            width: 60%;
-            position: absolute;
-            top: 10px;
-            left: -25px;
+        animation: word 1.2s linear infinite;
+        @keyframes word {
+            0% {
+                transform : rotateY(0deg)
+            }
+        
+            50% {
+                transform : rotateY(90deg)
+            }
+        
+            100% {
+                transform : rotateY(0deg)
+            }
         }
     }
     .mark {
@@ -238,7 +253,6 @@ a {
         }
     }
 }
-
 
 #fp-nav {
     position: fixed;
