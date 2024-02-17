@@ -51,11 +51,20 @@ body {
         justify-content: space-around;
         align-items: center;
         font-family: 'Nunito';
+        .menu {
+            width: 145px;
+            text-align: center;
+        }
         a {
-            padding: 15px 25px;
+            width: 100%;
+            height: 100%;
+            // padding: 15px 25px;
             position: relative;
             display: block;
             z-index: 1;
+            &:hover {
+                color: $point;
+            }
         }
     }
     .menu {
@@ -75,6 +84,14 @@ body {
 
 .intro {
     text-align: center;
+    .inner-wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+    }
     .line {
         position: relative;
         display: flex;
@@ -83,67 +100,77 @@ body {
         font-size: 200px;
         font-weight: 1000;
         line-height: 1.2;
-        overflow: hidden;
-    }
-    .textbox {
-        position: relative;
-        &:hover {
-            animation: moveUp 0.3s ease forwards;        
-        }
-        @keyframes moveUp {
-            100% {
-                transform: translateY(-20px); /* Y축 방향으로 -20px만큼 이동합니다 */
+        .textbox {
+            position: relative;
+            &:hover {
+                animation: moveUp 0.3s ease forwards;        
+            }
+            @keyframes moveUp {
+                100% {
+                    transform: translateY(-20px); 
+                }
+            }
+            p {
+                margin: 0;
+                font-size: 200px;
             }
         }
-        p {
-            margin: 0;
-            font-size: 200px;
+        .blind {
+            opacity: 0;
         }
-    }
-    .blind {
-        opacity: 0;
-    }
-    .emoji-slick {
-        position: absolute;
-        bottom: 45px;
-        left: -10px;
-    }
-    .emoji-slide {
-        font-size: 110px;
-    }
-    .emoji {
-        position: relative;
-        img {
+        .emoji-slick {
             position: absolute;
-            width: 40%;
-            top: 10px;
-            right: -90px;
+            bottom: 45px;
+            left: -10px;
         }
-    }
-    .name {
-        font-style: italic;
-        // color: $point;
-    }
-    .br {
-        margin-left: 50px;
-        color: $point;
-        animation: word 1.2s linear infinite;
-        @keyframes word {
-            0% {
-                transform : rotateY(0deg)
-            }
-        
-            50% {
-                transform : rotateY(90deg)
-            }
-        
-            100% {
-                transform : rotateY(0deg)
+        .emoji-slide {
+            font-size: 110px;
+        }
+        .emoji {
+            position: relative;
+            img {
+                position: absolute;
+                width: 40%;
+                top: 10px;
+                right: -90px;
             }
         }
-    }
-    .mark {
-        padding-left: 15px;
+        .name {
+            font-style: italic;
+        }
+        .br {
+            margin-left: 50px;
+            color: $point;
+            animation: word 1.2s linear infinite;
+            @keyframes word {
+                0% {
+                    transform : rotateY(0deg)
+                }
+            
+                50% {
+                    transform : rotateY(90deg)
+                }
+            
+                100% {
+                    transform : rotateY(0deg)
+                }
+            }
+        }
+        .mark {
+            padding-left: 20px;
+            animation: shake 1s ease-in-out infinite alternate;        
+            @keyframes shake {
+                0% {
+                    transform: scaleY(90%); 
+                }
+                100% {
+                    transform: scaleY(100%); 
+                }
+                100% {
+                    transform: scaleY(110%); 
+                }
+            }
+        }
     }
     p {
         font-size: 24px;
@@ -151,24 +178,52 @@ body {
         letter-spacing: 10px;
         color: $text-2;
     }
-    span {
+    .scroll-wrap {
         position: absolute;
-        font-family: 'Nunito';
-        font-size: 20px;
-        font-weight: 1000;
-        color: $primary;
+        bottom: 0;
+        // width: 100%;
+        margin: 0 auto;
+        .scroll-icon i {
+            padding-bottom: 20px;
+            animation: scroll-icon 0.5s linear infinite alternate;
+        }
+        @keyframes scroll-icon {
+            from {transform: translateY(0);}
+            to {transform: translateY(-10px)}
+        }
+        span {
+            font-family: 'Nunito';
+            font-size: 20px;
+            font-weight: 600;
+            color: $primary;
+        }
     }
 }
 
 .about-me {
     background: $primary;
-    p {
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 2;
+    .inner-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 150px;
     }
-    span {
-        font-weight: 700;
+    .text-wrap {
+        p {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 2;
+        }
+        span {
+            font-weight: 700;
+        }
+    }
+    .profile-image {
+        width: 340px;
+        height: 400px;
+        background-image: url(../../images/profile.png);
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 }
 

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 *, *:after, *:before {
@@ -44,11 +43,19 @@ body a {
   align-items: center;
   font-family: "Nunito";
 }
+#header .gnb .menu {
+  width: 145px;
+  text-align: center;
+}
 #header .gnb a {
-  padding: 15px 25px;
+  width: 100%;
+  height: 100%;
   position: relative;
   display: block;
   z-index: 1;
+}
+#header .gnb a:hover {
+  color: #65B6BE;
 }
 #header .menu {
   font-size: 16px;
@@ -67,6 +74,14 @@ body a {
 .intro {
   text-align: center;
 }
+.intro .inner-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
 .intro .line {
   position: relative;
   display: flex;
@@ -75,47 +90,46 @@ body a {
   font-size: 200px;
   font-weight: 1000;
   line-height: 1.2;
-  overflow: hidden;
 }
-.intro .textbox {
+.intro .line .textbox {
   position: relative;
 }
-.intro .textbox:hover {
+.intro .line .textbox:hover {
   animation: moveUp 0.3s ease forwards;
 }
 @keyframes moveUp {
   100% {
-    transform: translateY(-20px); /* Y축 방향으로 -20px만큼 이동합니다 */
+    transform: translateY(-20px);
   }
 }
-.intro .textbox p {
+.intro .line .textbox p {
   margin: 0;
   font-size: 200px;
 }
-.intro .blind {
+.intro .line .blind {
   opacity: 0;
 }
-.intro .emoji-slick {
+.intro .line .emoji-slick {
   position: absolute;
   bottom: 45px;
   left: -10px;
 }
-.intro .emoji-slide {
+.intro .line .emoji-slide {
   font-size: 110px;
 }
-.intro .emoji {
+.intro .line .emoji {
   position: relative;
 }
-.intro .emoji img {
+.intro .line .emoji img {
   position: absolute;
   width: 40%;
   top: 10px;
   right: -90px;
 }
-.intro .name {
+.intro .line .name {
   font-style: italic;
 }
-.intro .br {
+.intro .line .br {
   margin-left: 50px;
   color: #65B6BE;
   animation: word 1.2s linear infinite;
@@ -131,8 +145,20 @@ body a {
     transform: rotateY(0deg);
   }
 }
-.intro .mark {
-  padding-left: 15px;
+.intro .line .mark {
+  padding-left: 20px;
+  animation: shake 1s ease-in-out infinite alternate;
+}
+@keyframes shake {
+  0% {
+    transform: scaleY(90%);
+  }
+  100% {
+    transform: scaleY(100%);
+  }
+  100% {
+    transform: scaleY(110%);
+  }
 }
 .intro p {
   font-size: 24px;
@@ -140,24 +166,53 @@ body a {
   letter-spacing: 10px;
   color: #606163;
 }
-.intro span {
+.intro .scroll-wrap {
   position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+}
+.intro .scroll-wrap .scroll-icon i {
+  padding-bottom: 20px;
+  animation: scroll-icon 0.5s linear infinite alternate;
+}
+@keyframes scroll-icon {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+.intro .scroll-wrap span {
   font-family: "Nunito";
   font-size: 20px;
-  font-weight: 1000;
+  font-weight: 600;
   color: #BDD5D8;
 }
 
 .about-me {
   background: #BDD5D8;
 }
-.about-me p {
+.about-me .inner-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+.about-me .text-wrap p {
   font-size: 24px;
   font-weight: 500;
   line-height: 2;
 }
-.about-me span {
+.about-me .text-wrap span {
   font-weight: 700;
+}
+.about-me .profile-image {
+  width: 340px;
+  height: 400px;
+  background-image: url(../../images/profile.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .pf-wrap {
