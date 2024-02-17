@@ -6,6 +6,7 @@
     <title>한영원&nbsp|&nbsp포트폴리오</title>
     <link rel="stylesheet" href="./assets/css/fullpage.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/comm.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/fullpage.min.js"></script>
@@ -13,31 +14,33 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/af95449672.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="./assets/js/comm.js"></script>
 </head>
 
 <body>
+    <div class="cursor-default"></div>
     <header id="header">
         <div class="inner-wrap">
             <nav class="gnb">
                 <div class="menu">
-                    <a href="">
+                    <a href="#intro">
                         INTRO
                     </a>
                 </div>
                 <div class="menu">
-                    <a href="">
+                    <a href="#about-me">
                         ABOUT ME
                     </a>
                 </div>
                 <div class="main-btn"><span>0</span>one</div>
                 <div class="menu">
-                    <a href="">
+                    <a href="#portfolio-1">
                         PORTFOLIO
                     </a>
                 </div>
                 <div class="menu">
-                    <a href="">
+                    <a href="#more-info">
                         MORE INFO
                     </a>
                 </div>
@@ -91,23 +94,38 @@
         </div>
         <div class="section about-me">
             <div class="inner-wrap">
-                <div class="text-wrap">
-                    <p>ABOUT <strong>0one</strong>
-                        <img src="./images/emoji _light.png" alt="전구">
-                        <img src="./images/emoji _lighter.png" alt="전구">
-                    </p>
-                    <p>
-                        안녕하세요. 신입 웹 퍼블리셔 <span>한영원</span>입니다. <br>
-                        <span>좋아하는 만큼 잘 해내자</span>는 마음으로 공부하고 있습니다.
-                    </p>
-                    <p>
-                        사용자에게 <span>쉬우면서도 멋진 경험</span>을 제공하는 <br>
-                        웹을 만드는 것이 목표입니다. <br>
-                        사용자들에게 친절한 UI/UX와 어떤 기기에서도<br>
-                        잘 보이는 <span>반응형 웹을 만드는 데 관심</span>이 있습니다. <br>
-                    </p>
+                <div class="about-wrap">
+                    <div class="text-wrap">
+                        <div class="icon-wrap">
+                            <img src="./images/emoji _light.png" alt="전구">
+                            <img src="./images/emoji _lighter.png" alt="전구">
+                        </div>
+                        <p>ABOUT <strong>0one</strong>
+                        </p>
+                        <p>
+                            안녕하세요. 신입 웹 퍼블리셔 <span>한영원</span>입니다. <br>
+                            <span>좋아하는 만큼 잘 해내자</span>는 마음으로 공부하고 있습니다.
+                        </p>
+                        <p>
+                            사용자에게 <span>쉬우면서도 멋진 경험</span>을 제공하는 <br>
+                            웹을 만드는 것이 목표입니다. <br>
+                            사용자들에게 친절한 UI/UX와 어떤 기기에서도<br>
+                            잘 보이는 <span>반응형 웹을 만드는 데 관심</span>이 있습니다. <br>
+                        </p>
+                    </div>
+                    <div class="profile-image particletext confetti"></div>
                 </div>
-                <div class="profile-image"></div>
+                <div class="skill-wrap">
+                    <p>skills</p>
+                    <div class="skill-icon">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="section portfolio-1">
@@ -116,7 +134,7 @@
                 <div class="explanation">
                     <div class="ex-wrap">
                         <div class="ex-title">
-                            <div class="title-img title-justvet"></div>
+                            <div class="logo-img logo-justvet"></div>
                             <p>저스트벳 동물병원 - 웹디자인 개편 및 구현</p>
                         </div>
                         <div class="ex-tool">
@@ -153,8 +171,8 @@
                 <div class="explanation">
                     <div class="ex-wrap">
                         <div class="ex-title">
-                            <div class="title-img"></div>
-                            <p></p>
+                            <div class="logo-img logo-cheongdomall"></div>
+                            <p>청도몰 - 웹디자인 개편 및 구현(팀 작업)</p>
                         </div>
                         <div class="ex-tool">
                             <ul class="t-left">
@@ -164,20 +182,57 @@
                                 <li>참여도</li>
                             </ul>
                             <ul class="t-right">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li>Main, sub*2</li>
+                                <li>HTML, CSS(SCSS), JS, FIGMA</li>
+                                <li>Slick.js, AOS.js</li>
+                                <li>팀작업 65%(헤더, 푸터, 서브1, 서브2)</li>
                             </ul>
                         </div>
                         <div class="ex-text">
-                            <p></p>
+                            <p>개인 동물병원 페이지를 리뉴얼 했습니다. 반려동물 치료를 위해 방문한 사람들이 필요한 정보를 쉽고 빠르게 파악할 수 있도록 디자인하는 것이 목표였습니다. 병원인 만큼 청결함과 신뢰감을 줄 수 있는 컬러를 선정했으며, 진료과목이나 방문 및 상담방법 등 주요 정보를 눈에 잘 띄게 구성하였습니다. 동시에 페이지 탐색이 너무 단조롭게 느껴지지 않도록 마우스 오버 효과나 AOS를 사용하여 동적인 느낌을 추가하였습니다.</p>
                         </div>
                         <div class="ex-btn">
                             <ul>
-                                <li><a href="#">WEB SITE</a></li>
-                                <li><a href="#">GitHub</a></li>
-                                <li><a href="#">Figma</a></li>
+                                <li><a href="#"><span>WEB SITE</span></a></li>
+                                <li><a href="#"><span>GitHub</span></a></li>
+                                <li><a href="#"><span>Figma</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section portfolio-3">
+            <div class="pf-wrap">
+                <div class="pagebox"></div>
+                <div class="explanation">
+                    <div class="ex-wrap">
+                        <div class="ex-title">
+                            <div class="logo-img"></div>
+                            <p>원페이지 작업(예정) - 웹디자인 개편 및 구현</p>
+                        </div>
+                        <div class="ex-tool">
+                            <ul class="t-left">
+                                <li>PAGE</li>
+                                <li>TOOL</li>
+                                <li>PROCESS</li>
+                                <li>참여도</li>
+                            </ul>
+                            <ul class="t-right">
+                                <li>Main, sub*2</li>
+                                <li>HTML, CSS(SCSS), JS, FIGMA</li>
+                                <li>Slick.js, AOS.js</li>
+                                <li>개인작업 100%</li>
+                            </ul>
+                        </div>
+                        <div class="ex-text">
+                            <p>작업예정</p>
+                        </div>
+                        <div class="ex-btn">
+                            <ul>
+                                <li><a href="#"><span>WEB SITE</span></a></li>
+                                <li><a href="#"><span>GitHub</span></a></li>
+                                <li><a href="#"><span>Figma</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -211,11 +266,12 @@
     </div>
     <div id="fp-nav" class="fp-right">
         <ul>
-            <li><a href="#intro"></a></li>
-            <li><a href="#about-me"></a></li>
-            <li><a href="#portfolio-1"></a></li>
-            <li><a href="#portfolio-2"></a></li>
-            <li><a href="#more-info"></a></li>
+            <li><a href="#intro"><span></span></a></li>
+            <li><a href="#about-me"><span></span></a></li>
+            <li><a href="#portfolio-1"><span></span></a></li>
+            <li><a href="#portfolio-2"><span></span></a></li>
+            <li><a href="#portfolio-3"><span></span></a></li>
+            <li><a href="#more-info"><span></span></a></li>
         </ul>
     </div>
     <script>

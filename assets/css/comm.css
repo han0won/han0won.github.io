@@ -23,6 +23,15 @@ body a {
   color: inherit;
 }
 
+.cursor-default {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
 .inner-wrap {
   margin: 0 auto;
   padding: 0 80px;
@@ -39,7 +48,7 @@ body a {
 #header .gnb {
   margin-top: 15px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-family: "Nunito";
 }
@@ -215,6 +224,7 @@ body a {
   }
 }
 .intro p {
+  margin-top: 50px;
   font-size: 24px;
   font-weight: 100;
   letter-spacing: 10px;
@@ -224,7 +234,7 @@ body a {
   position: absolute;
   bottom: 0;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 .intro .scroll-wrap .scroll-icon i {
   padding-bottom: 30px;
@@ -251,32 +261,28 @@ body a {
 }
 .about-me .inner-wrap {
   display: flex;
+  flex-direction: column;
+}
+.about-me .about-wrap {
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 150px;
-  height: 100vh !important;
+  gap: 100px;
+  width: 100%;
 }
-.about-me .text-wrap p {
-  position: relative;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 2;
-}
-.about-me .text-wrap p:first-of-type {
-  color: #606163;
-  font-size: 22px;
-  font-weight: 300;
-}
-.about-me .text-wrap p img {
+.about-me .about-wrap .text-wrap .icon-wrap {
   position: absolute;
-  top: -100px;
-  left: 0;
+}
+.about-me .about-wrap .text-wrap img {
+  position: absolute;
+  top: -70px;
+  left: -15px;
   scale: 0.8;
 }
-.about-me .text-wrap p img:first-of-type {
+.about-me .about-wrap .text-wrap img:first-of-type {
   opacity: 1;
 }
-.about-me .text-wrap p img:nth-of-type(2) {
+.about-me .about-wrap .text-wrap img:nth-of-type(2) {
   animation: fade 2s infinite;
 }
 @keyframes fade {
@@ -290,21 +296,75 @@ body a {
     opacity: 0;
   }
 }
-.about-me .text-wrap strong {
+.about-me .about-wrap .text-wrap p {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 2;
+}
+.about-me .about-wrap .text-wrap p:first-of-type {
+  color: #606163;
+  font-size: 22px;
+  font-weight: 300;
+}
+.about-me .about-wrap .text-wrap strong {
   color: #0f0f0f;
   font-size: 24px;
   font-family: "Nunito";
   font-style: italic;
 }
-.about-me .text-wrap span {
+.about-me .about-wrap .text-wrap span {
   font-weight: 700;
 }
-.about-me .profile-image {
-  width: 340px;
+.about-me .about-wrap .profile-image {
+  width: 40%;
   height: 400px;
   background-image: url(../../images/profile.png);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+}
+.about-me .about-wrap .particletext {
+  text-align: center;
+  font-size: 48px;
+  position: relative;
+}
+.about-me .about-wrap .particletext.confetti > .particle {
+  opacity: 0;
+  position: absolute;
+  animation: confetti 3s ease-in infinite;
+}
+.about-me .about-wrap .particletext.confetti > .particle.c1 {
+  background-color: rgba(76, 175, 80, 0.5);
+}
+.about-me .about-wrap .particletext.confetti > .particle.c2 {
+  background-color: rgba(156, 39, 176, 0.5);
+}
+@keyframes confetti {
+  0% {
+    opacity: 0;
+    transform: translateY(0%) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  35% {
+    transform: translateY(-800%) rotate(270deg);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(2000%) rotate(1440deg);
+  }
+}
+.about-me .skill-wrap {
+  display: flex;
+  justify-content: space-around;
+}
+.about-me .skill-wrap ul {
+  display: flex;
 }
 
 .pf-wrap {
@@ -336,11 +396,16 @@ body a {
   flex-direction: column;
   row-gap: 10px;
 }
-.pf-wrap .explanation .ex-title .title-img {
+.pf-wrap .explanation .ex-title .logo-img {
   height: 40px;
 }
-.pf-wrap .explanation .ex-title .title-justvet {
+.pf-wrap .explanation .ex-title .logo-justvet {
   background-image: url(../../images/logo-justvet.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.pf-wrap .explanation .ex-title .logo-cheongdomall {
+  background-image: url(../../images/logo-cheondomall.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -419,9 +484,13 @@ body a {
 }
 .more-info #footer {
   position: absolute;
+  width: 100%;
   bottom: 0;
+  left: 0;
+  padding-bottom: 20px;
 }
 .more-info #footer p {
+  margin: 0;
   text-align: center;
   font-size: 14px;
   color: #606163;
@@ -440,11 +509,15 @@ body a {
   margin: 0;
 }
 #fp-nav ul li a {
+  width: 14px;
+  height: 14px;
+  text-decoration: none;
+}
+#fp-nav ul li span {
   width: 4px;
   height: 4px;
-  background-color: #606163;
   border-radius: 50%;
-  text-decoration: none;
+  background-color: #606163;
 }
 #fp-nav ul li.active > a {
   background-color: #65B6BE;
