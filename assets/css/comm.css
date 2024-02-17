@@ -12,7 +12,7 @@ body {
   font-family: "Pretendard", sans-serif;
   font-weight: 300;
   background: #FCFAF7;
-  color: #1d1d1d;
+  color: #0f0f0f;
 }
 body ul {
   padding-left: 0;
@@ -37,7 +37,7 @@ body a {
   width: 100%;
 }
 #header .gnb {
-  margin-top: 10px;
+  margin-top: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -74,12 +74,66 @@ body a {
 .intro {
   text-align: center;
 }
-.intro .inner-wrap {
+.intro, .intro * {
+  cursor: none;
+}
+.intro .shapes {
   position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: #0f0f0f;
+  overflow: hidden;
+}
+.intro .shape {
+  will-change: transform;
+  position: absolute;
+  border-radius: 50%;
+}
+.intro .shape.shape-1 {
+  background: #606163;
+  width: 400px;
+  height: 400px;
+  margin: -200px 0 0 -200px;
+}
+.intro .shape.shape-2 {
+  background: #2dcedd;
+  width: 240px;
+  height: 240px;
+  margin: -120px 0 0 -120px;
+}
+.intro .shape.shape-3 {
+  background: #ffcc57;
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+}
+.intro .cursor {
+  position: fixed;
+  background: rgba(101, 182, 190, 0.5);
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 50%;
+  will-change: transform;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+}
+.intro .inner-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  max-width: none;
+  width: 100vw;
   height: 100vh;
+  background-image: url(../../images/bg-intro.png);
+  mix-blend-mode: screen;
   overflow: hidden;
 }
 .intro .line {
@@ -170,9 +224,10 @@ body a {
   position: absolute;
   bottom: 0;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 .intro .scroll-wrap .scroll-icon i {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   animation: scroll-icon 0.5s linear infinite alternate;
 }
 @keyframes scroll-icon {
@@ -185,12 +240,13 @@ body a {
 }
 .intro .scroll-wrap span {
   font-family: "Nunito";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   color: #BDD5D8;
 }
 
 .about-me {
+  height: 100vh;
   background: #BDD5D8;
 }
 .about-me .inner-wrap {
@@ -198,11 +254,47 @@ body a {
   justify-content: center;
   align-items: center;
   gap: 150px;
+  height: 100vh !important;
 }
 .about-me .text-wrap p {
+  position: relative;
   font-size: 24px;
   font-weight: 500;
   line-height: 2;
+}
+.about-me .text-wrap p:first-of-type {
+  color: #606163;
+  font-size: 22px;
+  font-weight: 300;
+}
+.about-me .text-wrap p img {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  scale: 0.8;
+}
+.about-me .text-wrap p img:first-of-type {
+  opacity: 1;
+}
+.about-me .text-wrap p img:nth-of-type(2) {
+  animation: fade 2s infinite;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.about-me .text-wrap strong {
+  color: #0f0f0f;
+  font-size: 24px;
+  font-family: "Nunito";
+  font-style: italic;
 }
 .about-me .text-wrap span {
   font-weight: 700;
