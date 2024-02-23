@@ -150,6 +150,9 @@ body a {
   width: 100vw;
   height: 100vh;
   background-image: url(../../images/bg-intro.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
   mix-blend-mode: screen;
   overflow: hidden;
 }
@@ -477,6 +480,27 @@ body a {
 }
 .pf-wrap .explanation .ex-btn li a span {
   z-index: 20;
+}
+.pf-wrap .explanation .point-text {
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pf-wrap .explanation .point-text i {
+  animation: move-icon 0.7s linear infinite alternate;
+}
+@keyframes move-icon {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-10px);
+  }
+}
+.pf-wrap .explanation .point-text p {
+  color: #606163;
+  font-weight: bold;
 }
 
 .more-info {

@@ -143,6 +143,9 @@ body {
         width: 100vw;
         height: 100vh;
         background-image: url(../../images/bg-intro.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
         mix-blend-mode: screen;
         overflow: hidden;
     }
@@ -478,6 +481,25 @@ body {
                     }
                 }
             }
+        }
+        .point-text {
+            // position: absolute;
+            bottom: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            i{
+                animation: move-icon 0.7s linear infinite alternate;
+                @keyframes move-icon {
+                    from {transform: translateX(0);}
+                    to {transform: translateX(-10px)}
+                }   
+            }
+            p {
+                color: $text-2;
+                font-weight: bold;
+            }
+
         }
     }
 }
