@@ -375,8 +375,13 @@ body {
     .pagebox {
         width: 50%;
         background: #ececec;
-        background-size: cover;
+        background-position: 0 0;
+        background-size: 100% auto;
         background-repeat: no-repeat;
+        transition: background-position 20s ease;
+        &:hover {
+            background-position: 0 100%;
+        }
     }
     .justvet {
         background-image: url(../../images/page-justvet.png);
