@@ -35,7 +35,6 @@ body a {
 .inner-wrap {
   margin: 0 auto;
   padding: 0 80px;
-  max-width: 1440px;
 }
 
 #header {
@@ -80,43 +79,48 @@ body a {
   color: #65B6BE;
 }
 
-.intro {
-  text-align: center;
-}
-.intro, .intro * {
+.intro, .intro *,
+.about-me,
+.about-me * {
   cursor: none;
 }
-.intro .shapes {
+.intro .shapes,
+.about-me .shapes {
   position: relative;
   height: 100vh;
   width: 100vw;
   background: #0f0f0f;
   overflow: hidden;
 }
-.intro .shape {
+.intro .shape,
+.about-me .shape {
   will-change: transform;
   position: absolute;
   border-radius: 50%;
 }
-.intro .shape.shape-1 {
+.intro .shape.shape-1,
+.about-me .shape.shape-1 {
   background: #606163;
   width: 400px;
   height: 400px;
   margin: -200px 0 0 -200px;
 }
-.intro .shape.shape-2 {
+.intro .shape.shape-2,
+.about-me .shape.shape-2 {
   background: #2dcedd;
   width: 240px;
   height: 240px;
   margin: -120px 0 0 -120px;
 }
-.intro .shape.shape-3 {
+.intro .shape.shape-3,
+.about-me .shape.shape-3 {
   background: #ffcc57;
   width: 120px;
   height: 120px;
   margin: -60px 0 0 -60px;
 }
-.intro .cursor {
+.intro .cursor,
+.about-me .cursor {
   position: fixed;
   background: rgba(101, 182, 190, 0.5);
   width: 20px;
@@ -129,6 +133,10 @@ body a {
           user-select: none;
   pointer-events: none;
   z-index: 10000;
+}
+
+.intro {
+  text-align: center;
 }
 .intro .inner-wrap {
   position: absolute;
@@ -258,17 +266,27 @@ body a {
 .about-me {
   height: 100vh;
   background: #BDD5D8;
+  mix-blend-mode: screen;
 }
 .about-me .inner-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: #BDD5D8;
+  mix-blend-mode: screen;
 }
 .about-me .about-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 100px;
-  width: 100%;
+  max-width: none;
+  width: 100vw;
+  height: 100vh;
 }
 .about-me .about-wrap .text-wrap .icon-wrap {
   position: absolute;

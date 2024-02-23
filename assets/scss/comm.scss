@@ -44,7 +44,6 @@ body {
 .inner-wrap {
     margin: 0 auto;
     padding: 0 80px;
-    max-width: 1440px;
 }
 
 #header {
@@ -90,8 +89,8 @@ body {
     }
 }
 
-.intro {
-    text-align: center;
+.intro,
+.about-me {
     &, * {
         cursor: none;
     }
@@ -128,6 +127,10 @@ body {
         pointer-events: none;
         z-index: 10000;
     }
+}
+
+.intro {
+    text-align: center;
     .inner-wrap {
         position: absolute;
         top: 0;
@@ -255,16 +258,27 @@ body {
 .about-me {
     height: 100vh;
     background: $primary;
+    mix-blend-mode: screen;
     .inner-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
         display: flex;
         flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background: $primary;
+        mix-blend-mode: screen;
     }
     .about-wrap {
+        // position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 100px;
-        width: 100%;
+        max-width: none;
+        width: 100vw;
+        height: 100vh;
         .text-wrap {
             .icon-wrap {
                 position: absolute;
