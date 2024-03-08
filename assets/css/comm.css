@@ -23,15 +23,6 @@ body a {
   color: inherit;
 }
 
-.cursor-default {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 1px solid #000;
-  border-radius: 50%;
-  z-index: 10000;
-}
-
 .inner-wrap {
   margin: 0 auto;
   padding: 0 80px;
@@ -221,25 +212,6 @@ body a {
 }
 .intro .line .mark {
   padding-left: 20px;
-  animation: shake 1s ease-in-out infinite alternate;
-}
-@keyframes shake {
-  0% {
-    transform: scaleY(90%);
-  }
-  100% {
-    transform: scaleY(100%);
-  }
-  100% {
-    transform: scaleY(110%);
-  }
-}
-.intro p {
-  margin-top: 50px;
-  font-size: 24px;
-  font-weight: 100;
-  letter-spacing: 10px;
-  color: #606163;
 }
 .intro .scroll-wrap {
   position: absolute;
@@ -465,6 +437,11 @@ body a {
   height: 40px;
   border: 1px solid #65B6BE;
   border-radius: 5px;
+  background: transparent;
+  transition: all 0.3s;
+}
+.pf-wrap .explanation .ex-btn li:hover {
+  background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255, 255, 255, 0) 80%);
 }
 .pf-wrap .explanation .ex-btn li a {
   display: flex;
@@ -475,10 +452,7 @@ body a {
   font-size: 14px;
   font-weight: 500;
 }
-.pf-wrap .explanation .ex-btn li a:hover {
-  background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255, 255, 255, 0) 80%);
-}
-.pf-wrap .explanation .ex-btn li a span {
+.pf-wrap .explanation .ex-btn li span {
   z-index: 20;
 }
 .pf-wrap .explanation .point-text {
@@ -499,8 +473,8 @@ body a {
   }
 }
 .pf-wrap .explanation .point-text p {
+  font-size: 14px;
   color: #606163;
-  font-weight: bold;
 }
 
 .more-info {

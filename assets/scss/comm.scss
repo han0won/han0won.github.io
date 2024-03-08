@@ -32,15 +32,6 @@ body {
     }
 }
 
-.cursor-default {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #000;
-    border-radius: 50%;
-    z-index: 10000;
-}
-
 .inner-wrap {
     margin: 0 auto;
     padding: 0 80px;
@@ -215,26 +206,7 @@ body {
         }
         .mark {
             padding-left: 20px;
-            animation: shake 1s ease-in-out infinite alternate;        
-            @keyframes shake {
-                0% {
-                    transform: scaleY(90%); 
-                }
-                100% {
-                    transform: scaleY(100%); 
-                }
-                100% {
-                    transform: scaleY(110%); 
-                }
-            }
         }
-    }
-    p {
-        margin-top: 50px;
-        font-size: 24px;
-        font-weight: 100;
-        letter-spacing: 10px;
-        color: $text-2;
     }
     .scroll-wrap {
         position: absolute;
@@ -465,6 +437,11 @@ body {
                 height: 40px;
                 border: 1px solid $point;
                 border-radius: 5px;
+                background: transparent;
+                transition: all 0.3s;
+                &:hover {
+                    background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255,255,255,0) 80%);
+                }
                 a {
                     display: flex;
                     justify-content: center;
@@ -473,12 +450,9 @@ body {
                     height: 100%;
                     font-size: 14px;
                     font-weight: 500;
-                    &:hover {
-                        background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255,255,255,0) 80%);
-                    }
-                    span {
-                        z-index: 20;
-                    }
+                }
+                span {
+                    z-index: 20;
                 }
             }
         }
@@ -496,8 +470,8 @@ body {
                 }   
             }
             p {
+                font-size: 14px;
                 color: $text-2;
-                font-weight: bold;
             }
 
         }
