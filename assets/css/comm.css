@@ -72,11 +72,14 @@ body a {
 
 #intro, #intro *,
 #about-me,
-#about-me * {
+#about-me *,
+#more-info,
+#more-info * {
   cursor: none;
 }
 #intro .shapes,
-#about-me .shapes {
+#about-me .shapes,
+#more-info .shapes {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -84,34 +87,39 @@ body a {
   overflow: hidden;
 }
 #intro .shape,
-#about-me .shape {
+#about-me .shape,
+#more-info .shape {
   will-change: transform;
   position: absolute;
   border-radius: 50%;
 }
 #intro .shape.shape-1,
-#about-me .shape.shape-1 {
+#about-me .shape.shape-1,
+#more-info .shape.shape-1 {
   background: #ffcc57;
   width: 400px;
   height: 400px;
   margin: -200px 0 0 -200px;
 }
 #intro .shape.shape-2,
-#about-me .shape.shape-2 {
+#about-me .shape.shape-2,
+#more-info .shape.shape-2 {
   background: #2dcedd;
   width: 240px;
   height: 240px;
   margin: -120px 0 0 -120px;
 }
 #intro .shape.shape-3,
-#about-me .shape.shape-3 {
+#about-me .shape.shape-3,
+#more-info .shape.shape-3 {
   background: #606163;
   width: 120px;
   height: 120px;
   margin: -60px 0 0 -60px;
 }
 #intro .cursor,
-#about-me .cursor {
+#about-me .cursor,
+#more-info .cursor {
   position: fixed;
   background: rgba(101, 182, 190, 0.5);
   width: 20px;
@@ -138,6 +146,7 @@ body a {
   justify-content: center;
   align-items: center;
   max-width: none;
+  padding-bottom: 50px;
   width: 100vw;
   height: 100vh;
   background-image: url(../../images/bg-intro.png);
@@ -383,16 +392,20 @@ body a {
 }
 .pf-wrap .explanation .ex-title .logo-img {
   height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .pf-wrap .explanation .ex-title .logo-justvet {
   background-image: url(../../images/logo-justvet.png);
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 .pf-wrap .explanation .ex-title .logo-cheongdomall {
   background-image: url(../../images/logo-cheondomall.png);
-  background-size: contain;
-  background-repeat: no-repeat;
+}
+.pf-wrap .explanation .ex-title .logo-kasi {
+  background-image: url(../../images/logo-kasi.png);
+}
+.pf-wrap .explanation .ex-title .logo-lahan {
+  background-image: url(../../images/logo-lahan.png);
 }
 .pf-wrap .explanation .ex-title p {
   font-size: 14px;
@@ -422,13 +435,9 @@ body a {
   padding: 0;
   width: 100px;
   height: 40px;
-  border: 1px solid #65B6BE;
   border-radius: 5px;
   background: transparent;
   transition: all 0.3s;
-}
-.pf-wrap .explanation .ex-btn li:hover {
-  background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255, 255, 255, 0) 80%);
 }
 .pf-wrap .explanation .ex-btn li a {
   display: flex;
@@ -442,6 +451,30 @@ body a {
 .pf-wrap .explanation .ex-btn li span {
   z-index: 20;
 }
+.pf-wrap .explanation .justvet li {
+  border: 1px solid #00AEAA;
+}
+.pf-wrap .explanation .justvet li:hover {
+  background: radial-gradient(circle, rgba(0, 174, 170, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
+}
+.pf-wrap .explanation .cheongdomall li {
+  border: 1px solid #FF8C00;
+}
+.pf-wrap .explanation .cheongdomall li:hover {
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
+}
+.pf-wrap .explanation .kasi li {
+  border: 1px solid #6892FF;
+}
+.pf-wrap .explanation .kasi li:hover {
+  background: radial-gradient(circle, rgba(104, 146, 255, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
+}
+.pf-wrap .explanation .lahan li {
+  border: 1px solid #B07D58;
+}
+.pf-wrap .explanation .lahan li:hover {
+  background: radial-gradient(circle, rgba(176, 125, 88, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
+}
 
 #more-info {
   position: relative;
@@ -450,6 +483,18 @@ body a {
   text-align: center;
   font-size: 24px;
   line-height: 2;
+}
+#more-info .inner-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: #FCFAF7;
+  mix-blend-mode: screen;
 }
 #more-info p {
   font-weight: 300;

@@ -81,7 +81,8 @@ body {
 
 
 #intro,
-#about-me {
+#about-me,
+#more-info {
     &, * {
         cursor: none;
     }
@@ -131,6 +132,7 @@ body {
         justify-content: center;
         align-items: center;
         max-width: none;
+        padding-bottom: 50px;
         width: 100vw;
         height: 100vh;
         background-image: url(../../images/bg-intro.png);
@@ -379,16 +381,20 @@ body {
         .ex-title {
             .logo-img {
                 height: 40px;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
             .logo-justvet {
                 background-image: url(../../images/logo-justvet.png);
-                background-size: contain;
-                background-repeat: no-repeat;
             }
             .logo-cheongdomall {
                 background-image: url(../../images/logo-cheondomall.png);
-                background-size: contain;
-                background-repeat: no-repeat;
+            }
+            .logo-kasi {
+                background-image: url(../../images/logo-kasi.png);
+            }
+            .logo-lahan {
+                background-image: url(../../images/logo-lahan.png);
             }
             p {
                 font-size: 14px;
@@ -422,13 +428,9 @@ body {
                 padding: 0;
                 width: 100px;
                 height: 40px;
-                border: 1px solid $point;
                 border-radius: 5px;
                 background: transparent;
                 transition: all 0.3s;
-                &:hover {
-                    background: radial-gradient(circle, rgb(189, 213, 216) 0%, rgba(255,255,255,0) 80%);
-                }
                 a {
                     display: flex;
                     justify-content: center;
@@ -443,6 +445,38 @@ body {
                 }
             }
         }
+        .justvet {
+            li {
+                border: 1px solid #00AEAA;
+                &:hover {
+                    background: radial-gradient(circle, rgba(0, 174, 170, 0.3) 0%, rgba(255,255,255,0) 80%);
+                }
+            }
+        }
+        .cheongdomall {
+            li {
+                border: 1px solid #FF8C00;
+                &:hover {
+                    background: radial-gradient(circle, rgba(255, 140, 0, 0.3) 0%, rgba(255,255,255,0) 80%);
+                }
+            }
+        }
+        .kasi {
+            li {
+                border: 1px solid #6892FF;
+                &:hover {
+                    background: radial-gradient(circle,rgba(104, 146, 255, 0.3) 0%, rgba(255,255,255,0) 80%);
+                }
+            }
+        }
+        .lahan {
+            li {
+                border: 1px solid #B07D58;
+                &:hover {
+                    background: radial-gradient(circle, rgba(176, 125, 88, 0.3) 0%, rgba(255,255,255,0) 80%);
+                }
+            }
+        }
     }
 }
 
@@ -453,6 +487,18 @@ body {
     text-align: center;
     font-size: 24px;
     line-height: 2;
+    .inner-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background: $bg;
+        mix-blend-mode: screen;
+    }
     p {
         font-weight: 300;
     }
