@@ -52,6 +52,9 @@ body {
         .menu {
             width: 145px;
             text-align: center;
+            font-size: 16px;
+            font-weight: 900;
+            color: $text-2;
         }
         a {
             width: 100%;
@@ -63,18 +66,14 @@ body {
                 color: $point;
             }
         }
-    }
-    .menu {
-        font-size: 16px;
-        font-weight: 900;
-        color: $text-2;
-    }
-    .main-btn {
-        font-size: 36px;
-        font-weight: 1000;
-        font-style: italic;
-        span {
-            color: $point;
+        .main-btn {
+            font-size: 36px;
+            font-weight: 1000;
+            font-style: italic;
+            mix-blend-mode: difference;
+            span {
+                color: $point;
+            }
         }
     }
 }
