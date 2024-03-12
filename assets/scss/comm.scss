@@ -56,7 +56,6 @@ body {
         a {
             width: 100%;
             height: 100%;
-            // padding: 15px 25px;
             position: relative;
             display: block;
             z-index: 1;
@@ -80,8 +79,9 @@ body {
     }
 }
 
-.intro,
-.about-me {
+
+#intro,
+#about-me {
     &, * {
         cursor: none;
     }
@@ -96,7 +96,7 @@ body {
     will-change: transform;
     position: absolute;
     border-radius: 50%;
-    $shapes: (#606163: 400px, #2dcedd: 240px, #ffcc57: 120px);
+    $shapes: (#ffcc57: 400px, #2dcedd: 240px, #606163: 120px);
     @each $color, $size in $shapes {
         &.shape-#{index($shapes, ($color $size))} {
             background: $color;
@@ -120,7 +120,7 @@ body {
     }
 }
 
-.intro {
+#intro {
     text-align: center;
     .inner-wrap {
         position: absolute;
@@ -230,7 +230,7 @@ body {
     }
 }
 
-.about-me {
+#about-me {
     height: 100vh;
     background: $primary;
     mix-blend-mode: screen;
@@ -363,20 +363,7 @@ body {
     height: 100vh;
     .pagebox {
         width: 50%;
-        background: #ececec;
-        background-position: 0 0;
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-        transition: background-position 20s ease;
-        &:hover {
-            background-position: 0 100%;
-        }
-    }
-    .justvet {
-        background-image: url(../../images/page-justvet.png);
-    }
-    .cheongdomall {
-        background-image: url(../../images/page-cheongdomall.png);
+        overflow-y: hidden;
     }
     .explanation {
         display: flex;
@@ -404,7 +391,7 @@ body {
                 background-repeat: no-repeat;
             }
             p {
-                font-size: 18px;
+                font-size: 14px;
                 font-weight: 200;
             }
         }
@@ -456,29 +443,10 @@ body {
                 }
             }
         }
-        .point-text {
-            // position: absolute;
-            bottom: 100px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            i{
-                animation: move-icon 0.7s linear infinite alternate;
-                @keyframes move-icon {
-                    from {transform: translateX(0);}
-                    to {transform: translateX(-10px)}
-                }   
-            }
-            p {
-                font-size: 14px;
-                color: $text-2;
-            }
-
-        }
     }
 }
 
-.more-info {
+#more-info {
     position: relative;
     display: flex;
     align-items: center;
@@ -529,6 +497,7 @@ body {
         padding: 0;
         margin: 0;
         li {
+            position: relative;
             a {
                 width: 14px;
                 height: 14px;
@@ -540,9 +509,27 @@ body {
                 border-radius: 50%;
                 background-color: $text-2;
             }
-        }
-        li.active > a {
-            background-color: $point; 
+            p {
+                position: absolute;
+                top: -17px;
+                right: 30px;
+                opacity: 0;
+                color: $text-2;
+                font-family: 'Nunito';
+                font-weight: bold;
+                font-size: 14px;
+                white-space: nowrap;
+                transition: all 0.3s;
+            }
+            &:hover span {
+                background-color: $point; 
+            }
+            &:hover p {
+                opacity: 1;
+            }
+            &:active span {
+                background-color: $point; 
+            }
         }
     }
 }

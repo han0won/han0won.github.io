@@ -2,6 +2,7 @@ new fullpage('#fullpage', {
     anchors: ['intro', 'about-me', 'portfolio-1', 'portfolio-2', 'more-info']
 });
 
+// 커서
 $(window).on("mousemove", (e) => {
   $(".cursor-default").css({
       top: e.pageY + "px",
@@ -25,6 +26,24 @@ document.body.addEventListener("mousemove", evt => {
   })
 })
 
+// header
+document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener('scroll', function() {
+    const portfolioStart = document.querySelector('#portfolio-1').offsetTop;
+    const portfolioEnd = portfolioStart + document.querySelector('#portfolio-3').offsetBottom;
+
+    const header = document.querySelector('#header');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > portfolioStart && scrollTop < portfolioEnd)  {
+      header.style.display = 'none';
+    } else {
+      header.style.display = 'block';
+    }
+  })
+});
+
+// intro 이모지 슬라이드
 $(document).ready(function(){
     $('.emoji-slick').slick({
       autoplay: true,
@@ -36,6 +55,7 @@ $(document).ready(function(){
     });
 });
 
+// aboutme 컨페티
 function initparticles() {
   confetti();
 }
