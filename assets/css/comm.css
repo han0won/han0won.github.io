@@ -394,6 +394,9 @@ body a {
   background-size: contain;
   background-repeat: no-repeat;
 }
+.pf-wrap .explanation .ex-title .logo-bacchus {
+  background-image: url(../../images/logo-bacchus.png);
+}
 .pf-wrap .explanation .ex-title .logo-justvet {
   background-image: url(../../images/logo-justvet.png);
 }
@@ -449,6 +452,12 @@ body a {
 }
 .pf-wrap .explanation .ex-btn li span {
   z-index: 20;
+}
+.pf-wrap .explanation .bacchus li {
+  border: 1px solid #160A8B;
+}
+.pf-wrap .explanation .bacchus li:hover {
+  background: radial-gradient(circle, rgba(22, 10, 139, 0.1) 0%, rgba(255, 255, 255, 0) 80%);
 }
 .pf-wrap .explanation .justvet li {
   border: 1px solid #00AEAA;

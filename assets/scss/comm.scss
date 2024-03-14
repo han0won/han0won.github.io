@@ -383,6 +383,9 @@ body {
                 background-size: contain;
                 background-repeat: no-repeat;
             }
+            .logo-bacchus {
+                background-image: url(../../images/logo-bacchus.png);
+            }
             .logo-justvet {
                 background-image: url(../../images/logo-justvet.png);
             }
@@ -441,6 +444,14 @@ body {
                 }
                 span {
                     z-index: 20;
+                }
+            }
+        }
+        .bacchus {
+            li {
+                border: 1px solid #160A8B;
+                &:hover {
+                    background: radial-gradient(circle, rgba(22, 10, 139, 0.1) 0%, rgba(255,255,255,0) 80%);
                 }
             }
         }
