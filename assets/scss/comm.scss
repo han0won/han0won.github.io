@@ -44,7 +44,6 @@ body {
     z-index: 1000;
     width: 100%;
     .gnb {
-        margin-top: 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -368,7 +367,6 @@ body {
         align-items: center;
         width: 40%;
         .ex-wrap {
-            width: 70%;
             display: flex;
             flex-direction: column;
             row-gap: 10px;
@@ -405,7 +403,7 @@ body {
                 font-weight: 600; 
             }
             .t-right {
-                padding-left: 100px;
+                padding-left: 60px;
             }
             ul {
                 li {
@@ -439,6 +437,7 @@ body {
                     font-weight: 500;
                 }
                 span {
+                    text-align: center;
                     z-index: 20;
                 }
             }
@@ -499,6 +498,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 0 20px;
         width: 100vw;
         height: 100vh;
         background: $bg;
@@ -527,7 +527,7 @@ body {
         width: 100%;
         bottom: 0;
         left: 0;
-        padding-bottom: 20px;
+        padding: 20px;
         p {
             margin: 0;
             text-align: center;
@@ -620,7 +620,19 @@ body {
                 }
             }
         }
-    }  
+    } 
+    .pf-wrap {
+        .explanation {
+            width: 50%;
+            .ex-wrap {
+                padding: 0 20px;
+                width: 100%;
+            }
+            .ex-tool ul li {
+                font-size: 14px;
+            }
+        }
+    } 
 }
 @media screen and (max-width: 750px) {
     .cursor,
@@ -648,6 +660,34 @@ body {
                 width: 100%;
             }
         }
+    }
+    .pf-wrap {
+        flex-direction: column;
+        justify-content: flex-start;
+        .pagebox {
+            margin-top: 50px;
+            width: 100%;
+            height: 45%;
+        }
+        .explanation {
+            padding-top: 20px;
+            width: 100%;
+            .ex-title {
+                margin-top: 24px;
+            }
+            .sub-cont {
+                padding-left: 30px;
+            }
+            .ex-wrap {
+                flex-direction: row;
+            }
+            .ex-btn ul {
+                gap: 10px;
+            }
+        }
+    }
+    #more-info {
+        font-size: 20px;
     }
     #fp-nav {
         display: none;
@@ -680,6 +720,26 @@ body {
                 }
             }
         }
+        .m-hidden {
+            display: none;
+        }
+    }
+    .pf-wrap {
+        .explanation {
+            .ex-wrap {
+                flex-direction: column;
+                row-gap: 0;
+            }
+            .ex-title {
+                margin-top: 0;
+            }
+            .sub-cont {
+                padding-left: 0;
+            }
+        }
+    }
+    #more-info {
+        font-size: 16px;
         .m-hidden {
             display: none;
         }
