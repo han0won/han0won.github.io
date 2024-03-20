@@ -34,6 +34,8 @@ body a {
   left: 0;
   z-index: 1000;
   width: 100%;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 #header .gnb {
   display: flex;
@@ -276,7 +278,7 @@ body a {
   position: absolute;
   top: -70px;
   left: -15px;
-  scale: 0.8;
+  transform: scale(0.8);
 }
 #about-me .about-wrap .text-wrap img:first-of-type {
   opacity: 1;
@@ -430,6 +432,7 @@ body a {
 .pf-wrap .explanation .ex-btn ul {
   display: flex;
   gap: 20px;
+  padding-top: 10px;
 }
 .pf-wrap .explanation .ex-btn li {
   padding: 0;
