@@ -78,7 +78,6 @@ body {
     }
 }
 
-
 #intro,
 #about-me,
 #more-info {
@@ -119,7 +118,6 @@ body {
         z-index: 10000;
     }
 }
-
 #intro {
     text-align: center;
     .inner-wrap {
@@ -181,13 +179,14 @@ body {
                 position: absolute;
                 width: 40%;
                 top: 10px;
-                right: -90px;
+                left: 20px;
             }
         }
         .name {
             font-style: italic;
         }
         .br {
+            display: block;
             margin-left: 50px;
             color: $point;
             animation: word 1.2s linear infinite;
@@ -230,7 +229,6 @@ body {
         }
     }
 }
-
 #about-me {
     height: 100vh;
     background: $primary;
@@ -249,11 +247,9 @@ body {
     .about-wrap {
         // position: relative;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
-        gap: 100px;
         max-width: none;
-        width: 100vw;
         height: 100vh;
         .text-wrap {
             .icon-wrap {
@@ -357,9 +353,9 @@ body {
         }
     }
 }
-
 .pf-wrap {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 100vh;
     .pagebox {
@@ -368,7 +364,7 @@ body {
     }
     .explanation {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         width: 40%;
         .ex-wrap {
@@ -489,7 +485,6 @@ body {
         }
     }
 }
-
 #more-info {
     position: relative;
     display: flex;
@@ -586,6 +581,107 @@ body {
             &:active span {
                 background-color: $point; 
             }
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    #header {
+        .gnb {
+            justify-content: center;
+            .menu {
+                display: none;
+            }
+        }
+    }
+    #intro {
+        .line {
+            font-size: 150px;
+            .textbox p {
+                font-size: 150px;
+            }
+            .emoji-slick {
+                left: -5px;
+                bottom: 30px;
+            }
+            .emoji-slide {
+                font-size: 80px;
+            }
+        }
+    }  
+    #about-me {
+        .inner-wrap {
+            padding: 0 20px;
+        }
+        .about-wrap {
+            .text-wrap {
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }  
+}
+@media screen and (max-width: 750px) {
+    .cursor,
+    .shapes {
+        display: none;
+    }
+    #intro {
+        .m-hidden {
+            display: none;
+        }
+        .line .br {
+            margin-left: 0;
+        }
+        .line .emoji img {
+            left: 10px;
+        }
+    }
+    #about-me {
+        .inner-wrap {
+            mix-blend-mode: normal;
+        }
+        .about-wrap {
+            flex-direction: column-reverse;
+            .profile-image {
+                width: 100%;
+            }
+        }
+    }
+    #fp-nav {
+        display: none;
+    }
+}
+@media screen and (max-width: 475px) {
+    #intro {
+        .line {
+            font-size: 100px;
+            .textbox p {
+                font-size: 100px;
+            }
+            .emoji-slick {
+                left: -15px;
+                bottom: 20px;
+            }
+            .emoji-slide {
+                font-size: 55px;
+            }
+        }
+    }  
+    #about-me {
+        .about-wrap {
+            .profile-image {
+                display: none;
+            }
+            .text-wrap {
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+        .m-hidden {
+            display: none;
         }
     }
 }

@@ -197,12 +197,13 @@ body a {
   position: absolute;
   width: 40%;
   top: 10px;
-  right: -90px;
+  left: 20px;
 }
 #intro .line .name {
   font-style: italic;
 }
 #intro .line .br {
+  display: block;
   margin-left: 50px;
   color: #65B6BE;
   animation: word 1.2s linear infinite;
@@ -264,11 +265,9 @@ body a {
 }
 #about-me .about-wrap {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 100px;
   max-width: none;
-  width: 100vw;
   height: 100vh;
 }
 #about-me .about-wrap .text-wrap .icon-wrap {
@@ -370,6 +369,7 @@ body a {
 
 .pf-wrap {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 100vh;
 }
@@ -379,7 +379,7 @@ body a {
 }
 .pf-wrap .explanation {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 40%;
 }
@@ -582,4 +582,83 @@ body a {
 }
 #fp-nav ul li:active span {
   background-color: #65B6BE;
+}
+
+@media screen and (max-width: 950px) {
+  #header .gnb {
+    justify-content: center;
+  }
+  #header .gnb .menu {
+    display: none;
+  }
+  #intro .line {
+    font-size: 150px;
+  }
+  #intro .line .textbox p {
+    font-size: 150px;
+  }
+  #intro .line .emoji-slick {
+    left: -5px;
+    bottom: 30px;
+  }
+  #intro .line .emoji-slide {
+    font-size: 80px;
+  }
+  #about-me .inner-wrap {
+    padding: 0 20px;
+  }
+  #about-me .about-wrap .text-wrap p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .cursor,
+  .shapes {
+    display: none;
+  }
+  #intro .m-hidden {
+    display: none;
+  }
+  #intro .line .br {
+    margin-left: 0;
+  }
+  #intro .line .emoji img {
+    left: 10px;
+  }
+  #about-me .inner-wrap {
+    mix-blend-mode: normal;
+  }
+  #about-me .about-wrap {
+    flex-direction: column-reverse;
+  }
+  #about-me .about-wrap .profile-image {
+    width: 100%;
+  }
+  #fp-nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 475px) {
+  #intro .line {
+    font-size: 100px;
+  }
+  #intro .line .textbox p {
+    font-size: 100px;
+  }
+  #intro .line .emoji-slick {
+    left: -15px;
+    bottom: 20px;
+  }
+  #intro .line .emoji-slide {
+    font-size: 55px;
+  }
+  #about-me .about-wrap .profile-image {
+    display: none;
+  }
+  #about-me .about-wrap .text-wrap p {
+    font-size: 16px;
+  }
+  #about-me .m-hidden {
+    display: none;
+  }
 }/*# sourceMappingURL=comm.css.map */
