@@ -513,6 +513,20 @@ body a {
 #more-info strong {
   display: block;
   font-weight: 700;
+  background: linear-gradient(90deg, #BDD5D8, #65B6BE, #BDD5D8);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: colorChange 2s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(15, 15, 15, 0.1);
+}
+@keyframes colorChange {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
 }
 #more-info .more-bg {
   position: absolute;
@@ -524,6 +538,19 @@ body a {
   background-image: url(../../images/bg-more.png);
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  animation: colorOpacity 2s linear infinite alternate;
+}
+@keyframes colorOpacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 #more-info #footer {
   position: absolute;
@@ -537,6 +564,9 @@ body a {
   text-align: center;
   font-size: 14px;
   color: #606163;
+}
+#more-info #footer .m-visible {
+  display: none;
 }
 
 #fp-nav {
@@ -717,5 +747,11 @@ body a {
   }
   #more-info .m-hidden {
     display: none;
+  }
+  #more-info #footer p {
+    font-size: 12px;
+  }
+  #more-info #footer .m-visible {
+    display: block;
   }
 }/*# sourceMappingURL=comm.css.map */

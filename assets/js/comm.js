@@ -26,23 +26,6 @@ document.body.addEventListener("mousemove", evt => {
   })
 })
 
-// header
-document.addEventListener('DOMContentLoaded', function() {
-  window.addEventListener('scroll', function() {
-    const portfolioStart = document.querySelector('#portfolio-1').offsetTop;
-    const portfolioEnd = portfolioStart + document.querySelector('#portfolio-3').offsetBottom;
-
-    const header = document.querySelector('#header');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > portfolioStart && scrollTop < portfolioEnd)  {
-      header.style.display = 'none';
-    } else {
-      header.style.display = 'block';
-    }
-  })
-});
-
 // intro 이모지 슬라이드
 $(document).ready(function(){
     $('.emoji-slick').slick({
